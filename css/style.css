@@ -1,0 +1,156 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Soft_blue: hsl(215, 51%, 70%);
+  --Cyan: hsl(178, 100%, 50%);
+  --Very_dark_blue_main_BG: hsl(217, 54%, 11%);
+  --Very_dark_blue_card_BG: hsl(216, 50%, 16%);
+  --Very_dark_blue_line: hsl(215, 32%, 27%);
+  --White: hsl(0, 0%, 100%);
+}
+
+html {
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--Very_dark_blue_main_BG);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--Very_dark_blue_card_BG);
+  padding: 1.3rem;
+  max-width: 375px;
+  width: 100%;
+  gap: 1.2rem;
+  border-radius: 0.8rem;
+  margin: 1rem;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.image-equilibrium {
+  min-width: 240px;
+  width: inherit;
+  height: inherit;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  border-radius: 0.5rem;
+  transition: 0.5s ease;
+  background-color: hsla(178, 100%, 50%, 0.5);
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+h1,
+span {
+  color: var(--White);
+}
+
+.title-subtitle p {
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.price-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  display: inherit;
+  align-items: inherit;
+  font-size: 10px;
+  gap: 0.4rem;
+  color: var(--Cyan);
+}
+
+.title-subtitle p,
+.date,
+.author {
+  color: var(--Soft_blue);
+}
+
+.date {
+  display: inherit;
+  align-items: inherit;
+  gap: 0.4rem;
+}
+
+hr {
+  background-color: var(--Very_dark_blue_line);
+  border: none;
+  height: 1px;
+}
+.author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border: solid 1px var(--White);
+  border-radius: 100%;
+}
+footer {
+  background-color: var(--Very_dark_blue_main_BG);
+  padding-bottom: 0.5rem;
+  color: var(--White);
+}
+@media (max-width: 450px) {
+  .container {
+    min-width: 280px;
+  }
+}
